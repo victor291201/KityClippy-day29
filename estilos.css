@@ -1,0 +1,38 @@
+body {
+  margin: 0px;
+  padding: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(241, 241, 241);
+  --clip :polygon(0 10%, 10% 0, 100% 0, 100% 90%, 90% 100%, 0 100%);
+}
+.container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+img{
+  clip-path: var(--clip);
+  position: relative;
+  z-index: 1;
+}
+.container::before{
+  clip-path: var(--clip);
+  content: " ";
+  position:absolute;
+  background-color: rgb(131, 7, 114);
+  width: 410px;
+  height: 410px;
+}
+.container::after{
+  clip-path: var(--clip);
+  content: " ";
+  position:absolute;
+  background-color: white;
+  width: 402px;
+  height: 402px;
+}
